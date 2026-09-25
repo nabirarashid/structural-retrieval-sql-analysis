@@ -46,7 +46,7 @@ deepseek-v4-flash      681         3.49        12372773
 gemini-3.1-flash-lite  1289        1.78        1316               
 gemini-embedding-001   3           0.02        0
 ```
-The solver (deepseek-v4-flash) generated 12.37M output tokens across 681 calls; the judge (claude-haiku-4-5) made 2,365 calls producing only 11,880 tokens. Reasoning is expensive, verdicts are cheap.
+The solver (deepseek-v4-flash) generated 12.37M output tokens across 681 calls; the judge (claude-haiku-4-5) made 2,365 calls producing only 11,880 tokens. Reasoning is expensive, verdicts are cheap. claude-haiku-4-5's 2,365 ledger calls comprise the paper's 2,354-call reranker run plus the documented 10-call pilot and one probe.
 
 ### 4. Truncation proxy: calls at budget cap
 ```sql
@@ -76,7 +76,7 @@ gemini     hard  0.0    0.1    0.554
 labembed   easy  0.086  0.878  0.954
 labembed   hard  0.0    0.026  0.178
 ```
-Strict Hit@1 is 0.0 on the hard tier for every embedder, while easy tier reaches 8.6-12.2%. This is the paper's headline: retrieval collapses under adversarial disguise.
+Strict Hit@1 is 0.0 on the hard tier for every embedder, while easy tier reaches 8.6-12.2%. This is the paper's headline: retrieval collapses under adversarial disguise. labembed is the lab-hosted second serving of Qwen3-Embedding-8B from the paper's deployment-divergence comparison (Section 4), not a third model.
 
 ### 6. Strict vs lenient pivot
 ```sql
